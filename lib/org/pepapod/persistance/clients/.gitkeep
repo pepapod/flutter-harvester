@@ -1,0 +1,8 @@
+Here we should put the specific db clients.
+
+For example, if we use SQLite, files like the following should be included
+
+sqlite-client.dart
+
+That file should have a class that knows how to open up a connection and perform operations
+over the db it operates

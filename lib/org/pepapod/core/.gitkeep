@@ -1,0 +1,8 @@
+Here we should put everything related to logic under it's corresponding
+package.
+
+If we have string processing, lets set it like:
+
+/core/string/
+
+And so on

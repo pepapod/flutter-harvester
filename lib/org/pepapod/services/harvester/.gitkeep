@@ -1,0 +1,16 @@
+Here we should put services the widgets will use
+
+Here, each class should have a prefix that points what kind
+of services it is
+
+default-user-profile-service.dart
+
+or
+
+cloud-user-profile-service.dart
+
+All the clases included here in this package should implement an interface
+that needs to be declared in:
+
+services-declaration.dart
+

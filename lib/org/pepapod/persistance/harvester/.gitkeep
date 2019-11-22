@@ -1,0 +1,13 @@
+Here we should put the abstractions of the persistance layer,
+using a repository pattern structure, or a DAO approach
+
+Here, each class should have a prefix that points what underlaying
+implementation is being used. Like:
+
+sqlite-user-profile-persistance.dart
+
+All the clases included here in this package should implement an interface
+that needs to be declared in:
+
+persistance-declaration.dart
+
