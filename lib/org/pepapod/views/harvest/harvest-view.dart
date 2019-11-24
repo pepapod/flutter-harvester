@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_harvester/org/pepapod/model/Bag.dart';
-import 'package:flutter_harvester/org/pepapod/model/Harvest.dart';
 import 'package:flutter_harvester/org/pepapod/views/harvest/tabview/harvest-bags-tabview.dart';
 import 'package:flutter_harvester/org/pepapod/views/harvest/tabview/harvest-general-tabview.dart';
+import 'package:flutter_harvester/org/pepapod/views/harvest/tabview/harvest-result-tabview.dart';
 
 class HarvestView extends StatelessWidget {
 
@@ -90,8 +90,7 @@ class HarvestView extends StatelessWidget {
   }
 
   Widget _buildResultsTabBarView() {
-    return Scaffold(
-      backgroundColor: Colors.red,
+    return HarvestResultTabView(
     );
   }
 }
