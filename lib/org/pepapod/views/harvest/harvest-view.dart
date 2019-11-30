@@ -8,9 +8,9 @@ import 'package:flutter_harvester/org/pepapod/views/harvest/tabview/harvest-resu
 class HarvestView extends StatelessWidget {
 
   final List<Bag> myBags = <Bag>[
-    Bag('Julian', '12345'),
-    Bag('Fragancia', '5556'),
-    Bag('Julian', '55544')
+    Bag('Julian', '12345', 'asdd'),
+    Bag('Fragancia', '5556', 'asdd'),
+    Bag('Julian', '55544', 'asdd'   )
   ];
 
   @override

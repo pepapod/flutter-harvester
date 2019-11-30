@@ -1,3 +1,5 @@
+import 'persistance-declaration.dart';
+
 /// This interface is the one that declares all the
 /// available persistances the application has
 ///
@@ -10,4 +12,7 @@ abstract class PersistanceFactory {
   /// UserProfilePersistance userProfilePersistance();
   ///
   ///
+
+  HarvestPersistance harvestPersistance();
+
 }

@@ -1,26 +1,31 @@
-
 import 'package:flutter_harvester/org/pepapod/model/Bag.dart';
 import 'package:flutter_harvester/org/pepapod/persistance/db-document.dart';
 
-class Harvest extends DBDocument{
-
+class Harvest extends DBDocument {
   final String harvestId;
-  final String date;
-  final List<Bag> bagList;
+  final String harvestDate;
 
-  Harvest(this.harvestId, this.date, this.bagList);
+  //final List<Bag> bagList;
+
+  Harvest(this.harvestId, this.harvestDate);
 
   @override
   String key() {
-    // TODO: implement key
-    return null;
+    return harvestId;
   }
 
   @override
   Map<String, dynamic> toJson() {
-    // TODO: implement toJson
-    return null;
+    return {
+      "harvestId": harvestId,
+      "date": harvestDate,
+      //"bagList": bagList,
+    };
   }
 
-
+  factory Harvest.fromJson(Map<String, dynamic> json) {
+    String harvestId = json["harvestId"];
+    String harvestDate = json["harvestDate"];
+    return Harvest(harvestId, harvestDate);
+  }
 }

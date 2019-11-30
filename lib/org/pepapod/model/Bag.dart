@@ -5,20 +5,23 @@ class Bag extends DBDocument{
 
   final String collectorName;
   final String bagId;
+  final String imagePath;
 
-  Bag(this.collectorName, this.bagId);
+  Bag(this.collectorName, this.bagId, this.imagePath);
 
   @override
   String key() {
-    // TODO: implement key
-    return null;
+    return bagId;
   }
 
 
   @override
   Map<String, dynamic> toJson() {
-    // TODO: implement toJson
-    return null;
+    return {
+      "bagId": bagId,
+      "collectorName": collectorName,
+      "imagePath": imagePath,
+    };
   }
 
 }
