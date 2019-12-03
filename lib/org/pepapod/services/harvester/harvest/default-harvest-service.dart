@@ -1,4 +1,5 @@
-import 'package:flutter_harvester/org/pepapod/model/Harvest.dart';
+import 'package:flutter_harvester/org/pepapod/model/harvest/Harvest.dart';
+import 'package:flutter_harvester/org/pepapod/model/harvest/harvest-list.dart';
 
 import '../../../persistance/factory/default-persistance-factory.dart';
 import '../../../persistance/persistance-declaration.dart';
@@ -6,7 +7,6 @@ import '../../exceptions/service-exception.dart';
 import '../../services-declaration.dart';
 
 class DefaultHarvestService implements HarvestService {
-
   static HarvestService _instance;
 
   DefaultHarvestService._internal();
@@ -19,10 +19,10 @@ class DefaultHarvestService implements HarvestService {
   }
 
   @override
-  Future<Harvest> getHarvest(String key) async {
+  Future<List<Harvest>> getHarvest() async {
     try {
-      Harvest harvest = await _getPersistance().getHarvest(key);
-      return harvest;
+      HarvestList harvestList = await _getPersistance().getHarvestList();
+      return harvestList != null ? harvestList.entries : [];
     } catch (e) {
       throw SevereException(e);
     }
@@ -31,7 +31,12 @@ class DefaultHarvestService implements HarvestService {
   @override
   Future<void> saveHarvest(Harvest harvest) async {
     try {
-      await _getPersistance().saveHarvests(harvest);
+      var harvestList = await _getPersistance().getHarvestList();
+      if (harvestList == null) {
+        harvestList = HarvestList.empty();
+      }
+      harvestList.add(harvest);
+      await _getPersistance().saveHarvests(harvestList);
     } catch (e) {
       throw SevereException(e);
     }

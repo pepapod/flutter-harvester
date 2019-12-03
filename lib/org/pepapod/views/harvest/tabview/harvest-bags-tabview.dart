@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_harvester/org/pepapod/model/Bag.dart';
-import 'package:flutter_harvester/org/pepapod/model/Harvest.dart';
+import 'package:flutter_harvester/org/pepapod/model/harvest/Harvest.dart';
 import 'package:flutter_harvester/org/pepapod/views/harvest/widget/harvest-bag-card.dart';
 
 class HarvestBagsTabView extends StatelessWidget {

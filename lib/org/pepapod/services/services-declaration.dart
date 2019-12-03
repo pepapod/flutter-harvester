@@ -1,7 +1,7 @@
-import 'package:flutter_harvester/org/pepapod/model/Harvest.dart';
+import 'package:flutter_harvester/org/pepapod/model/harvest/Harvest.dart';
 
 abstract class HarvestService {
   Future<void> saveHarvest(Harvest harvest);
 
-  Future<Harvest> getHarvest(String key);
+  Future<List<Harvest>> getHarvest();
 }
