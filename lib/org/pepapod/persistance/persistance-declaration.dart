@@ -1,7 +1,8 @@
 import 'package:flutter_harvester/org/pepapod/model/Harvest.dart';
+import 'package:flutter_harvester/org/pepapod/model/HarvestList.dart';
 
 abstract class HarvestPersistance {
-  Future<Harvest> getHarvest(String key);
+  Future<HarvestList> getHarvestList();
 
   Future<void> saveHarvests(Harvest harvest);
 }

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter_harvester/org/pepapod/model/Harvest.dart';
+import 'package:flutter_harvester/org/pepapod/model/HarvestList.dart';
 import 'package:flutter_harvester/org/pepapod/persistance/clients/sembast-db-client.dart';
 
 import '../../persistance-declaration.dart';
@@ -18,19 +19,19 @@ class SembastHarvestPersistance implements HarvestPersistance {
   }
 
   @override
-  Future<Harvest> getHarvest(String key) async {
-    Harvest harvest;
+  Future<HarvestList> getHarvestList() async {
+    HarvestList harvestList;
     try {
       var sembastDBClient = SembastDBClient.instance();
-      var harvestJson = await sembastDBClient.get(key);
-      if (harvestJson != null) {
-        harvest = Harvest.fromJson(harvestJson);
+      var harvestListJson = await sembastDBClient.get(HarvestList.KEY);
+      if (harvestListJson != null) {
+        harvestList = HarvestList.fromJson(harvestListJson);
       }
     } catch (e) {
       log(e);
     }
 
-    return harvest;
+    return harvestList;
   }
 
   @override
