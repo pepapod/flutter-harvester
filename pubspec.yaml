@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  sembast: ^2.1.1
+  path_provider:
+  path:
 
 
 dev_dependencies:

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_harvester/org/pepapod/persistance/factory/default-persistance-factory.dart';
+import 'package:flutter_harvester/org/pepapod/services/services-declaration.dart';
 
 import 'services-factory.dart';
 
@@ -34,5 +36,10 @@ class Services extends InheritedWidget implements ServiceFactory {
   @override
   bool updateShouldNotify(Services oldWidget) {
     return this.factory().runtimeType == this.factory().runtimeType;
+  }
+
+  @override
+  HarvestService harvestService() {
+    return _serviceFactory.harvestService();
   }
 }

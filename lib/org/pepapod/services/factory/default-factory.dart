@@ -1,3 +1,5 @@
+import 'package:flutter_harvester/org/pepapod/services/harvester/harvest/default-harvest-service.dart';
+import 'package:flutter_harvester/org/pepapod/services/services-declaration.dart';
 import 'package:flutter_harvester/org/pepapod/services/services-factory.dart';
 
 class DefaultServiceFactory extends ServiceFactory {
@@ -10,5 +12,10 @@ class DefaultServiceFactory extends ServiceFactory {
       _instance = DefaultServiceFactory._();
     }
     return _instance;
+  }
+
+  @override
+  HarvestService harvestService() {
+    return DefaultHarvestService.instance();
   }
 }

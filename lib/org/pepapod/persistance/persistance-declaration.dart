@@ -1,12 +1,8 @@
-/// Here is the file where we will put all the persistance interfaces.
-///
-/// This file should only have abstract classes in the form of interfaces
-///
-/// Example:
-///
-/// abstract class UserProfilePersistance {
-///    Future<UserProfile> getUserProfile(String username);
-/// }
-///
-///
-/// Then, the interfaces here declared will be implemented on the ./harvester module
+import 'package:flutter_harvester/org/pepapod/model/harvest/Harvest.dart';
+import 'package:flutter_harvester/org/pepapod/model/harvest/harvest-list.dart';
+
+abstract class HarvestPersistance {
+  Future<HarvestList> getHarvestList();
+
+  Future<void> saveHarvests(HarvestList harvestList);
+}

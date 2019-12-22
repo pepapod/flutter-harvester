@@ -1,3 +1,5 @@
+import 'package:flutter_harvester/org/pepapod/services/services-declaration.dart';
+
 /// This interface is the one that declares all the
 /// available services the application has
 ///
@@ -5,9 +7,5 @@
 /// services
 
 abstract class ServiceFactory {
-  /// An example method here could be:
-  ///
-  /// UserProfileService userProfileService();
-  ///
-  ///
+  HarvestService harvestService();
 }
